@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023) -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>lovedoge</title>
+    <!-- CSS only -->
+    <link href="./lovedoge_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="./lovedoge_files/index.css" rel="stylesheet">
+<style data-emotion="css-global" data-s=""></style><style data-emotion="css" data-s=""></style></head>
+
+<body><templet data-is-dataverse-installed="true" data-is-meta-mask-installed="true" id="__DATAVERSE_VARS__"></templet>
+    <div class="container p-3">
+        <div class="row">
+            <div class="col text-end">
+                <button id="btn-telegram" type="button" class="btn btn-outline-info me-3">Join Telegram</button>
+                <button id="btn-trade-1" type="button" class="btn btn-outline-info">Trade on DogeSwap</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col title fs-1 text-center mt-5">
+                <span>D</span><span>o</span><span>g</span><span>e</span>
+                <span>E</span><span>a</span><span>t</span>
+                <span>D</span><span>o</span><span>g</span><span>e</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col subtitle fs-3 text-center mt-1 mb-5">
+                (lovedoge)
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col text-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1Wwf7ZnIaHNTIOipxdYJRRs4OPLM1_l2PA&usqp=CAU">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center fs-5 mb-5">
+                英文名：lovedoge 
+                中文名：爱情狗
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4 text-center">
+                打造狗狗链第一个千倍狗狗。让单身狗身价百万，拥有爱情
+            </div>
+            <div class="col-lg-4 mb-4 text-center">
+                中文群：https://t.me/lovedogedoge
+            </div>
+            <div class="col-lg-4 mb-4 text-center">
+                合约/Contract：0x78Dc93C2f9b138F48e02d1b33Efe16E6978f1C5F
+
+                
+            </div>
+        </div>
+        <div class="row mt-3 mb-5">
+            <div class="col text-center fst-italic">
+                Twitter：https://twitter.com/lovedogedoge
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button id="btn-trade-2" type="button" class="btn btn-lg btn-info text-white">Trade on DogeSwap</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const createLinkButton = (id, url) => document.getElementById(id)
+            .addEventListener("click", () => window.open(url, "_blank"));
+
+        createLinkButton("btn-trade-1", "https://dogeswap.org/#/swap?outputCurrency=0x78dc93c2f9b138f48e02d1b33efe16e6978f1c5f");
+        createLinkButton("btn-trade-2", "https://dogeswap.org/#/swap?outputCurrency=0x78dc93c2f9b138f48e02d1b33efe16e6978f1c5f");
+        createLinkButton("btn-telegram", "https://t.me/lovedogedoge");
+    </script>
+
+
+<script>
+  const buildMethod = async (methodName,input) => {
+    const createUUID = () => {
+      const s = [];
+      const hexDigits = '0123456789abcdef';
+      for (let i = 0; i < 36; i++) {
+        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+      }
+      s[14] = '4';
+      s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);
+      s[8] = s[13] = s[18] = s[23] = '-';
+      const uuid = s.join('');
+      return uuid;
+    }
+    const uuid = createUUID();
+    window.postMessage({ method: methodName, data:input, uuid }, location.origin);
+    const output = await new Promise((resolve) => {
+      const receiveMessage = (event) => {
+        if (event.origin === location.origin && event.data.type === 'callback' && event.data.uuid === uuid) {
+          resolve(event.data.data);
+          window.removeEventListener('message', receiveMessage);
+        }
+      };
+      window.addEventListener('message', receiveMessage);
+    });
+    return output;
+  };
+
+  const isExtension = () => buildMethod('isExtension');
+  const is3idConnected = () => buildMethod('is3idConnected');
+  const linkIdentity = () => buildMethod('linkIdentity');
+  const getLinkedIdentity = () => buildMethod('getLinkedIdentity');
+  const applyForData = () => buildMethod('applyForData');
+  const getAuthorizedData = () => buildMethod('getAuthorizedData');
+  const isCurated = (input) => buildMethod('isCurated',input);
+  const curate = (input) => buildMethod('curate',input);
+  
+  window.dataExchangeSDK={isExtension,is3idConnected,getLinkedIdentity,linkIdentity,applyForData,getAuthorizedData,isCurated,curate};
+    </script><div id="__dataverse__"><div class="css-wit0b7"><div id="nft" class="css-ow8abz"><div class="css-1xyv4ah"><div class="css-ameej6"><div class="css-u7x0fx">Curate</div><div class="css-1azakc"><div class="css-spvgrm"><div class="css-1rzdnss"><div class="css-mmdt3g">Save</div></div><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCiAgICB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGZpbGw9IiMwMDAiIGQ9Ik0yNS4yNTEsNi40NjFjLTEwLjMxOCwwLTE4LjY4Myw4LjM2NS0xOC42ODMsMTguNjgzaDQuMDY4YzAtOC4wNzEsNi41NDMtMTQuNjE1LDE0LjYxNS0xNC42MTVWNi40NjF6Ij4KICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVUeXBlPSJ4bWwiCiAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iCiAgICB0eXBlPSJyb3RhdGUiCiAgICBmcm9tPSIwIDI1IDI1IgogICAgdG89IjM2MCAyNSAyNSIKICAgIGR1cj0iMC44cyIKICAgIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+CiAgPC9wYXRoPgo8L3N2Zz4=" class="css-qp5p5o"></div></div></div><div class="css-1dvl6qj"><div class="css-zl1inp"><div class="css-19juxwh"><div class="css-11g3qz2"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02LjUgNEM2LjUgNC44Mjg0MyA1LjgyODQzIDUuNSA1IDUuNUM0LjE3MTU3IDUuNSAzLjUgNC44Mjg0MyAzLjUgNEMzLjUgMy4xNzE1NyA0LjE3MTU3IDIuNSA1IDIuNUM1LjgyODQzIDIuNSA2LjUgMy4xNzE1NyA2LjUgNFoiIGZpbGw9IiMwRDBEMEQiLz4KPHBhdGggZD0iTTkuOTQ3MjEgMy43NzYzOUM4Ljg2ODEgMS42MTgxNyA2Ljk1MTU2IDAuNSA1IDAuNUMzLjA0ODQ0IDAuNSAxLjEzMTkgMS42MTgxNyAwLjA1Mjc4NjQgMy43NzYzOUMtMC4wMTc1OTU1IDMuOTE3MTYgLTAuMDE3NTk1NSA0LjA4Mjg0IDAuMDUyNzg2NCA0LjIyMzYxQzEuMTMxOSA2LjM4MTgzIDMuMDQ4NDQgNy41IDUgNy41QzYuOTUxNTYgNy41IDguODY4MSA2LjM4MTgzIDkuOTQ3MjEgNC4yMjM2MUMxMC4wMTc2IDQuMDgyODQgMTAuMDE3NiAzLjkxNzE2IDkuOTQ3MjEgMy43NzYzOVpNNSA2LjVDMy41MTU2MSA2LjUgMS45OTkwMyA1LjY4OTYxIDEuMDY0ODMgNEMxLjk5OTAzIDIuMzEwMzkgMy41MTU2MSAxLjUgNSAxLjVDNi40ODQzOSAxLjUgOC4wMDA5NyAyLjMxMDM5IDguOTM1MTcgNEM4LjAwMDk3IDUuNjg5NjEgNi40ODQzOSA2LjUgNSA2LjVaIiBmaWxsPSIjMEQwRDBEIi8+Cjwvc3ZnPgo=" class="css-wfulhh"><div class="css-1jbl75r">Untitled</div><div class="css-1jhjt5v"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI0IiB2aWV3Qm94PSIwIDAgNiA0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNS4yMTg4IDAuODU1MzMzTDIuOTM3NDcgMy44NTMzM0MyLjg3NjMyIDMuOTQyODQgMi43NzU4MyAzLjk5NzQzIDIuNjY3NDcgNEMyLjU1OTM0IDMuOTk3MjEgMi40NTkxNCAzLjk0MjY1IDIuMzk4MTMgMy44NTMzM0wwLjExNjc5OSAwLjg1NTMzM0MwLjAwMzUyNzI1IDAuNzAzODIxIC0wLjAyOTczMzcgMC41MDY5ODUgMC4wMjc0NjU1IDAuMzI2NjY3QzAuMDg2MTMyMiAwLjE0NDY2NyAwLjIyNDc5OSAwLjAxNzMzMzMgMC4zODYxMzIgMEg0Ljk0NzQ3QzUuMTA5NDcgMC4wMTY2NjY3IDUuMjQ5NDcgMC4xNDI2NjcgNS4zMDc0NyAwLjMyNTMzM0M1LjM2NTczIDAuNTA1ODIzIDUuMzMyMjcgMC43MDMzNTcgNS4yMTg4IDAuODU1MzMzWiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==" class="css-1klhacq"></div></div><div class="css-uqveva"><div class="hideScrollbar css-1310wxs"></div></div></div></div></div></div></div></div></div><script>
+        const __DATAVERSE_EXTENSION_VERSION__ = "0.5.5";
+        // window.dataExchangeSDK={a:1};
+    </script></body></html>
